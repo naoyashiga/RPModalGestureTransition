@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9A4030601BB96A0100075BAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A40305F1BB96A0100075BAF /* AppDelegate.swift */; };
-		9A4030621BB96A0100075BAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4030611BB96A0100075BAF /* ViewController.swift */; };
 		9A4030651BB96A0100075BAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4030631BB96A0100075BAF /* Main.storyboard */; };
 		9A4030671BB96A0100075BAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4030661BB96A0100075BAF /* Assets.xcassets */; };
 		9A40306A1BB96A0100075BAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4030681BB96A0100075BAF /* LaunchScreen.storyboard */; };
@@ -17,6 +16,8 @@
 		9A40308E1BB96A7600075BAF /* BackgroundPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A40308D1BB96A7600075BAF /* BackgroundPresentationController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A4030931BB96BE400075BAF /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4030911BB96BE400075BAF /* ModalViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A4030941BB96BE400075BAF /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4030921BB96BE400075BAF /* ModalViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		9A4030971BB96C6D00075BAF /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4030961BB96C6D00075BAF /* TopViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9A4030991BB96E4600075BAF /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4030981BB96E4600075BAF /* TransitionAnimator.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 /* Begin PBXFileReference section */
 		9A40305C1BB96A0100075BAF /* RPModalGestureTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPModalGestureTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A40305F1BB96A0100075BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9A4030611BB96A0100075BAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9A4030641BB96A0100075BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A4030661BB96A0100075BAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A4030691BB96A0100075BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +53,8 @@
 		9A40308D1BB96A7600075BAF /* BackgroundPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundPresentationController.swift; sourceTree = "<group>"; };
 		9A4030911BB96BE400075BAF /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		9A4030921BB96BE400075BAF /* ModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
+		9A4030961BB96C6D00075BAF /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		9A4030981BB96E4600075BAF /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +105,12 @@
 		9A40305E1BB96A0100075BAF /* RPModalGestureTransition */ = {
 			isa = PBXGroup;
 			children = (
-				9A40305F1BB96A0100075BAF /* AppDelegate.swift */,
-				9A4030611BB96A0100075BAF /* ViewController.swift */,
 				9A4030631BB96A0100075BAF /* Main.storyboard */,
 				9A4030661BB96A0100075BAF /* Assets.xcassets */,
 				9A4030681BB96A0100075BAF /* LaunchScreen.storyboard */,
 				9A40306B1BB96A0100075BAF /* Info.plist */,
+				9A40309A1BB96FF100075BAF /* AppDelegate */,
+				9A40309B1BB9704800075BAF /* Transition */,
 				9A40308F1BB96B9600075BAF /* Controller */,
 			);
 			path = RPModalGestureTransition;
@@ -135,6 +137,7 @@
 		9A40308F1BB96B9600075BAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9A4030951BB96C5D00075BAF /* Top */,
 				9A4030901BB96BA100075BAF /* Modal */,
 			);
 			name = Controller;
@@ -148,6 +151,30 @@
 				9A4030921BB96BE400075BAF /* ModalViewController.xib */,
 			);
 			name = Modal;
+			sourceTree = "<group>";
+		};
+		9A4030951BB96C5D00075BAF /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				9A4030961BB96C6D00075BAF /* TopViewController.swift */,
+			);
+			name = Top;
+			sourceTree = "<group>";
+		};
+		9A40309A1BB96FF100075BAF /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9A40305F1BB96A0100075BAF /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		9A40309B1BB9704800075BAF /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				9A4030981BB96E4600075BAF /* TransitionAnimator.swift */,
+			);
+			name = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,8 +310,9 @@
 			files = (
 				9A4030931BB96BE400075BAF /* ModalViewController.swift in Sources */,
 				9A40308E1BB96A7600075BAF /* BackgroundPresentationController.swift in Sources */,
-				9A4030621BB96A0100075BAF /* ViewController.swift in Sources */,
+				9A4030991BB96E4600075BAF /* TransitionAnimator.swift in Sources */,
 				9A4030601BB96A0100075BAF /* AppDelegate.swift in Sources */,
+				9A4030971BB96C6D00075BAF /* TopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

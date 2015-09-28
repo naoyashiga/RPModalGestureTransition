@@ -19,4 +19,7 @@ class ModalViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func dismissButtonTapped(sender: UIButton) {
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
