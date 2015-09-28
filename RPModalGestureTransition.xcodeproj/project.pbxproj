@@ -14,6 +14,7 @@
 		9A40306A1BB96A0100075BAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4030681BB96A0100075BAF /* LaunchScreen.storyboard */; };
 		9A4030751BB96A0100075BAF /* RPModalGestureTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4030741BB96A0100075BAF /* RPModalGestureTransitionTests.swift */; };
 		9A4030801BB96A0100075BAF /* RPModalGestureTransitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A40307F1BB96A0100075BAF /* RPModalGestureTransitionUITests.swift */; };
+		9A40308E1BB96A7600075BAF /* BackgroundPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A40308D1BB96A7600075BAF /* BackgroundPresentationController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9A40307B1BB96A0100075BAF /* RPModalGestureTransitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPModalGestureTransitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A40307F1BB96A0100075BAF /* RPModalGestureTransitionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPModalGestureTransitionUITests.swift; sourceTree = "<group>"; };
 		9A4030811BB96A0100075BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A40308D1BB96A7600075BAF /* BackgroundPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				9A4030661BB96A0100075BAF /* Assets.xcassets */,
 				9A4030681BB96A0100075BAF /* LaunchScreen.storyboard */,
 				9A40306B1BB96A0100075BAF /* Info.plist */,
+				9A40308D1BB96A7600075BAF /* BackgroundPresentationController.swift */,
 			);
 			path = RPModalGestureTransition;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A40308E1BB96A7600075BAF /* BackgroundPresentationController.swift in Sources */,
 				9A4030621BB96A0100075BAF /* ViewController.swift in Sources */,
 				9A4030601BB96A0100075BAF /* AppDelegate.swift in Sources */,
 			);
