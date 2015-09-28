@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A4030601BB96A0100075BAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A40305F1BB96A0100075BAF /* AppDelegate.swift */; };
+		9A4030621BB96A0100075BAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4030611BB96A0100075BAF /* ViewController.swift */; };
+		9A4030651BB96A0100075BAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4030631BB96A0100075BAF /* Main.storyboard */; };
+		9A4030671BB96A0100075BAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4030661BB96A0100075BAF /* Assets.xcassets */; };
+		9A40306A1BB96A0100075BAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4030681BB96A0100075BAF /* LaunchScreen.storyboard */; };
+		9A4030751BB96A0100075BAF /* RPModalGestureTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4030741BB96A0100075BAF /* RPModalGestureTransitionTests.swift */; };
+		9A4030801BB96A0100075BAF /* RPModalGestureTransitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A40307F1BB96A0100075BAF /* RPModalGestureTransitionUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A4030711BB96A0100075BAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A4030541BB96A0000075BAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A40305B1BB96A0100075BAF;
+			remoteInfo = RPModalGestureTransition;
+		};
+		9A40307C1BB96A0100075BAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A4030541BB96A0000075BAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A40305B1BB96A0100075BAF;
+			remoteInfo = RPModalGestureTransition;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9A40305C1BB96A0100075BAF /* RPModalGestureTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPModalGestureTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A40305F1BB96A0100075BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9A4030611BB96A0100075BAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A4030641BB96A0100075BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9A4030661BB96A0100075BAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A4030691BB96A0100075BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A40306B1BB96A0100075BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A4030701BB96A0100075BAF /* RPModalGestureTransitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPModalGestureTransitionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A4030741BB96A0100075BAF /* RPModalGestureTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPModalGestureTransitionTests.swift; sourceTree = "<group>"; };
+		9A4030761BB96A0100075BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A40307B1BB96A0100075BAF /* RPModalGestureTransitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPModalGestureTransitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A40307F1BB96A0100075BAF /* RPModalGestureTransitionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPModalGestureTransitionUITests.swift; sourceTree = "<group>"; };
+		9A4030811BB96A0100075BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A4030591BB96A0100075BAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A40306D1BB96A0100075BAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A4030781BB96A0100075BAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A4030531BB96A0000075BAF = {
+			isa = PBXGroup;
+			children = (
+				9A40305E1BB96A0100075BAF /* RPModalGestureTransition */,
+				9A4030731BB96A0100075BAF /* RPModalGestureTransitionTests */,
+				9A40307E1BB96A0100075BAF /* RPModalGestureTransitionUITests */,
+				9A40305D1BB96A0100075BAF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A40305D1BB96A0100075BAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A40305C1BB96A0100075BAF /* RPModalGestureTransition.app */,
+				9A4030701BB96A0100075BAF /* RPModalGestureTransitionTests.xctest */,
+				9A40307B1BB96A0100075BAF /* RPModalGestureTransitionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A40305E1BB96A0100075BAF /* RPModalGestureTransition */ = {
+			isa = PBXGroup;
+			children = (
+				9A40305F1BB96A0100075BAF /* AppDelegate.swift */,
+				9A4030611BB96A0100075BAF /* ViewController.swift */,
+				9A4030631BB96A0100075BAF /* Main.storyboard */,
+				9A4030661BB96A0100075BAF /* Assets.xcassets */,
+				9A4030681BB96A0100075BAF /* LaunchScreen.storyboard */,
+				9A40306B1BB96A0100075BAF /* Info.plist */,
+			);
+			path = RPModalGestureTransition;
+			sourceTree = "<group>";
+		};
+		9A4030731BB96A0100075BAF /* RPModalGestureTransitionTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A4030741BB96A0100075BAF /* RPModalGestureTransitionTests.swift */,
+				9A4030761BB96A0100075BAF /* Info.plist */,
+			);
+			path = RPModalGestureTransitionTests;
+			sourceTree = "<group>";
+		};
+		9A40307E1BB96A0100075BAF /* RPModalGestureTransitionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9A40307F1BB96A0100075BAF /* RPModalGestureTransitionUITests.swift */,
+				9A4030811BB96A0100075BAF /* Info.plist */,
+			);
+			path = RPModalGestureTransitionUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A40305B1BB96A0100075BAF /* RPModalGestureTransition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A4030841BB96A0100075BAF /* Build configuration list for PBXNativeTarget "RPModalGestureTransition" */;
+			buildPhases = (
+				9A4030581BB96A0100075BAF /* Sources */,
+				9A4030591BB96A0100075BAF /* Frameworks */,
+				9A40305A1BB96A0100075BAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RPModalGestureTransition;
+			productName = RPModalGestureTransition;
+			productReference = 9A40305C1BB96A0100075BAF /* RPModalGestureTransition.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A40306F1BB96A0100075BAF /* RPModalGestureTransitionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A4030871BB96A0100075BAF /* Build configuration list for PBXNativeTarget "RPModalGestureTransitionTests" */;
+			buildPhases = (
+				9A40306C1BB96A0100075BAF /* Sources */,
+				9A40306D1BB96A0100075BAF /* Frameworks */,
+				9A40306E1BB96A0100075BAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A4030721BB96A0100075BAF /* PBXTargetDependency */,
+			);
+			name = RPModalGestureTransitionTests;
+			productName = RPModalGestureTransitionTests;
+			productReference = 9A4030701BB96A0100075BAF /* RPModalGestureTransitionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9A40307A1BB96A0100075BAF /* RPModalGestureTransitionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A40308A1BB96A0100075BAF /* Build configuration list for PBXNativeTarget "RPModalGestureTransitionUITests" */;
+			buildPhases = (
+				9A4030771BB96A0100075BAF /* Sources */,
+				9A4030781BB96A0100075BAF /* Frameworks */,
+				9A4030791BB96A0100075BAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A40307D1BB96A0100075BAF /* PBXTargetDependency */,
+			);
+			name = RPModalGestureTransitionUITests;
+			productName = RPModalGestureTransitionUITests;
+			productReference = 9A40307B1BB96A0100075BAF /* RPModalGestureTransitionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A4030541BB96A0000075BAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = naoyashiga;
+				TargetAttributes = {
+					9A40305B1BB96A0100075BAF = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					9A40306F1BB96A0100075BAF = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 9A40305B1BB96A0100075BAF;
+					};
+					9A40307A1BB96A0100075BAF = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 9A40305B1BB96A0100075BAF;
+					};
+				};
+			};
+			buildConfigurationList = 9A4030571BB96A0000075BAF /* Build configuration list for PBXProject "RPModalGestureTransition" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A4030531BB96A0000075BAF;
+			productRefGroup = 9A40305D1BB96A0100075BAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A40305B1BB96A0100075BAF /* RPModalGestureTransition */,
+				9A40306F1BB96A0100075BAF /* RPModalGestureTransitionTests */,
+				9A40307A1BB96A0100075BAF /* RPModalGestureTransitionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A40305A1BB96A0100075BAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A40306A1BB96A0100075BAF /* LaunchScreen.storyboard in Resources */,
+				9A4030671BB96A0100075BAF /* Assets.xcassets in Resources */,
+				9A4030651BB96A0100075BAF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A40306E1BB96A0100075BAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A4030791BB96A0100075BAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A4030581BB96A0100075BAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A4030621BB96A0100075BAF /* ViewController.swift in Sources */,
+				9A4030601BB96A0100075BAF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A40306C1BB96A0100075BAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A4030751BB96A0100075BAF /* RPModalGestureTransitionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A4030771BB96A0100075BAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A4030801BB96A0100075BAF /* RPModalGestureTransitionUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A4030721BB96A0100075BAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A40305B1BB96A0100075BAF /* RPModalGestureTransition */;
+			targetProxy = 9A4030711BB96A0100075BAF /* PBXContainerItemProxy */;
+		};
+		9A40307D1BB96A0100075BAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A40305B1BB96A0100075BAF /* RPModalGestureTransition */;
+			targetProxy = 9A40307C1BB96A0100075BAF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9A4030631BB96A0100075BAF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A4030641BB96A0100075BAF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9A4030681BB96A0100075BAF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A4030691BB96A0100075BAF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A4030821BB96A0100075BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A4030831BB96A0100075BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A4030851BB96A0100075BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RPModalGestureTransition/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naoyashiga.RPModalGestureTransition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9A4030861BB96A0100075BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RPModalGestureTransition/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naoyashiga.RPModalGestureTransition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9A4030881BB96A0100075BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RPModalGestureTransitionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naoyashiga.RPModalGestureTransitionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPModalGestureTransition.app/RPModalGestureTransition";
+			};
+			name = Debug;
+		};
+		9A4030891BB96A0100075BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RPModalGestureTransitionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naoyashiga.RPModalGestureTransitionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPModalGestureTransition.app/RPModalGestureTransition";
+			};
+			name = Release;
+		};
+		9A40308B1BB96A0100075BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RPModalGestureTransitionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naoyashiga.RPModalGestureTransitionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RPModalGestureTransition;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		9A40308C1BB96A0100075BAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RPModalGestureTransitionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naoyashiga.RPModalGestureTransitionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RPModalGestureTransition;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A4030571BB96A0000075BAF /* Build configuration list for PBXProject "RPModalGestureTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A4030821BB96A0100075BAF /* Debug */,
+				9A4030831BB96A0100075BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A4030841BB96A0100075BAF /* Build configuration list for PBXNativeTarget "RPModalGestureTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A4030851BB96A0100075BAF /* Debug */,
+				9A4030861BB96A0100075BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9A4030871BB96A0100075BAF /* Build configuration list for PBXNativeTarget "RPModalGestureTransitionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A4030881BB96A0100075BAF /* Debug */,
+				9A4030891BB96A0100075BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9A40308A1BB96A0100075BAF /* Build configuration list for PBXNativeTarget "RPModalGestureTransitionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A40308B1BB96A0100075BAF /* Debug */,
+				9A40308C1BB96A0100075BAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A4030541BB96A0000075BAF /* Project object */;
+}
