@@ -8,7 +8,8 @@
 
 import UIKit
 
-class TopViewController: UIViewController {
+class TopViewController: UIViewController, ModalViewControllerDelegate {
+    var interactiveTransition: InteractiveTransition?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,13 @@ class TopViewController: UIViewController {
         let modalVC = ModalViewController(nibName: "ModalViewController", bundle: nil)
         modalVC.modalPresentationStyle = .Custom
         modalVC.transitioningDelegate = self
+//        modalVC.delegate = self
         
         presentViewController(modalVC, animated: true, completion: nil)
+    }
+    
+    func applyInteractiveTransition(animator: InteractiveTransition) {
+        interactiveTransition = animator
     }
 
 }
@@ -35,21 +41,27 @@ extension TopViewController: UIViewControllerTransitioningDelegate {
         return BackgroundPresentationController(presentedViewController: presented, presentingViewController: self)
     }
     
-//    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        
-//        let animator = TransitionPresentationAnimator()
-//        animator.sourceVC = self
-//        animator.destinationVC = presented
-//        
-//        return animator
-//    }
-//    
-//    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        
-//        let animator = TransitionDismissAnimator()
-//        animator.sourceVC = dismissed
-//        animator.destinationVC = self
-//        
-//        return animator
-//    }
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return TransitionAnimator(isPresenting: true)
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return TransitionAnimator(isPresenting: false)
+    }
+    
+    func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return nil
+    }
+    
+    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        
+        if let animator = interactiveTransition {
+            return animator
+        }
+        
+        return nil
+    }
+    
 }

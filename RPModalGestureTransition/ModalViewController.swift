@@ -8,11 +8,22 @@
 
 import UIKit
 
+protocol ModalViewControllerDelegate {
+    func applyInteractiveTransition(animator: InteractiveTransition)
+}
+
 class ModalViewController: UIViewController {
+//    var delegate: ModalViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        let interactiveTransition = InteractiveTransition()
+//        interactiveTransition.attachToViewController(self)
+//        
+//        delegate?.applyInteractiveTransition(interactiveTransition)
+        
+        modalPresentationStyle = .Custom
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +31,7 @@ class ModalViewController: UIViewController {
     }
     
     @IBAction func dismissButtonTapped(sender: UIButton) {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
+    
 }

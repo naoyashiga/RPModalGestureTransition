@@ -18,6 +18,7 @@
 		9A4030941BB96BE400075BAF /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4030921BB96BE400075BAF /* ModalViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		9A4030971BB96C6D00075BAF /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4030961BB96C6D00075BAF /* TopViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A4030991BB96E4600075BAF /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4030981BB96E4600075BAF /* TransitionAnimator.swift */; settings = {ASSET_TAGS = (); }; };
+		9AACA02F1BBAAE84006224BB /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AACA02E1BBAAE84006224BB /* InteractiveTransition.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		9A4030921BB96BE400075BAF /* ModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
 		9A4030961BB96C6D00075BAF /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		9A4030981BB96E4600075BAF /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
+		9AACA02E1BBAAE84006224BB /* InteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				9A4030981BB96E4600075BAF /* TransitionAnimator.swift */,
+				9AACA02E1BBAAE84006224BB /* InteractiveTransition.swift */,
 			);
 			name = Transition;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				9A4030991BB96E4600075BAF /* TransitionAnimator.swift in Sources */,
 				9A4030601BB96A0100075BAF /* AppDelegate.swift in Sources */,
 				9A4030971BB96C6D00075BAF /* TopViewController.swift in Sources */,
+				9AACA02F1BBAAE84006224BB /* InteractiveTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +541,7 @@
 				9A4030861BB96A0100075BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A4030871BB96A0100075BAF /* Build configuration list for PBXNativeTarget "RPModalGestureTransitionTests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +550,7 @@
 				9A4030891BB96A0100075BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A40308A1BB96A0100075BAF /* Build configuration list for PBXNativeTarget "RPModalGestureTransitionUITests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +559,7 @@
 				9A40308C1BB96A0100075BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

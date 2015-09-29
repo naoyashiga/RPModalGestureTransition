@@ -27,11 +27,16 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         return transitionContext?.viewControllerForKey(UITransitionContextFromViewControllerKey)
     }
     
-    private func start() {
-        guard let fromViewController = fromViewController, toViewController = toViewController, containerView = containerView else {
-            return
-        }
+    private let isPresenting :Bool
+    
+    // MARK: - Life cycle
+    
+    init(isPresenting: Bool) {
+        self.isPresenting = isPresenting
+        
+        super.init()
     }
+    
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return animationDuration
@@ -40,6 +45,71 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         self.transitionContext = transitionContext
         
-        start()
+        if isPresenting {
+            animatePresentationWithTransitionContext(transitionContext)
+        } else {
+            animateDismissalWithTransitionContext(transitionContext)
+        }
+    }
+    
+    private func start() {
+    }
+    
+    private func animatePresentationWithTransitionContext(transitionContext: UIViewControllerContextTransitioning) {
+        
+        guard let fromViewController = fromViewController, toViewController = toViewController, containerView = containerView else {
+            return
+        }
+        
+        guard let toView = transitionContext.viewForKey(UITransitionContextToViewKey) else { return }
+        
+        toView.frame = transitionContext.finalFrameForViewController(toViewController)
+        toView.center.y -= 300
+        
+        containerView.addSubview(toView)
+        
+        UIView.animateWithDuration(
+            self.transitionDuration(transitionContext),
+            delay: 0.0,
+            usingSpringWithDamping: 1.0,
+            initialSpringVelocity: 0,
+            options: UIViewAnimationOptions.CurveEaseOut,
+            animations: {
+            
+            toView.center.y += 300
+            
+            }) { (completed: Bool) -> Void in
+                
+                if transitionContext.transitionWasCancelled() {
+                    transitionContext.completeTransition(false)
+                } else {
+                    transitionContext.completeTransition(true)
+                }
+        }
+    }
+    
+    private func animateDismissalWithTransitionContext(transitionContext: UIViewControllerContextTransitioning) {
+        
+        guard let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey) else { return }
+        
+        UIView.animateWithDuration(
+            self.animationDuration,
+            delay: 0.0,
+            usingSpringWithDamping: 1.0,
+            initialSpringVelocity: 0.5,
+            options: .CurveEaseInOut,
+            animations: {
+            
+            fromView.frame.origin.y = -fromView.bounds.height
+            
+            }, completion: {(completed: Bool) -> Void in
+                
+                if transitionContext.transitionWasCancelled() {
+                    transitionContext.completeTransition(false)
+                } else {
+                    fromView.removeFromSuperview()
+                    transitionContext.completeTransition(true)
+                }
+        })
     }
 }
