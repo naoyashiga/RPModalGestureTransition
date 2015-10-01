@@ -37,7 +37,6 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         super.init()
     }
     
-    
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return animationDuration
     }
@@ -52,12 +51,9 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         }
     }
     
-    private func start() {
-    }
-    
     private func animatePresentationWithTransitionContext(transitionContext: UIViewControllerContextTransitioning) {
         
-        guard let fromViewController = fromViewController, toViewController = toViewController, containerView = containerView else {
+        guard let toViewController = toViewController, containerView = containerView else {
             return
         }
         
@@ -69,23 +65,16 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(toView)
         
         UIView.animateWithDuration(
-            self.transitionDuration(transitionContext),
+            self.animationDuration,
             delay: 0.0,
             usingSpringWithDamping: 1.0,
-            initialSpringVelocity: 0,
-            options: UIViewAnimationOptions.CurveEaseOut,
+            initialSpringVelocity: 0.5,
+            options: .CurveEaseInOut,
             animations: {
-            
-            toView.center.y += 300
-            
-            }) { (completed: Bool) -> Void in
                 
-                if transitionContext.transitionWasCancelled() {
-                    transitionContext.completeTransition(false)
-                } else {
-                    transitionContext.completeTransition(true)
-                }
-        }
+                toView.center.y += 300
+                
+            }, completion: didFinishedAnimation)
     }
     
     private func animateDismissalWithTransitionContext(transitionContext: UIViewControllerContextTransitioning) {
@@ -102,14 +91,18 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             
             fromView.frame.origin.y = -fromView.bounds.height
             
-            }, completion: {(completed: Bool) -> Void in
-                
-                if transitionContext.transitionWasCancelled() {
-                    transitionContext.completeTransition(false)
-                } else {
-                    fromView.removeFromSuperview()
-                    transitionContext.completeTransition(true)
-                }
-        })
+            }, completion: didFinishedAnimation)
+    }
+    
+    private func didFinishedAnimation(_:Bool) {
+        guard let transitionContext = transitionContext else {
+            return
+        }
+        
+        if transitionContext.transitionWasCancelled() {
+            transitionContext.completeTransition(false)
+        } else {
+            transitionContext.completeTransition(true)
+        }
     }
 }
