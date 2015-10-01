@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A32140E1BBD69BB00B7FEC4 /* ModalViewController+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A32140D1BBD69BB00B7FEC4 /* ModalViewController+UIViewControllerTransitioningDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		9A4030601BB96A0100075BAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A40305F1BB96A0100075BAF /* AppDelegate.swift */; };
 		9A4030651BB96A0100075BAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4030631BB96A0100075BAF /* Main.storyboard */; };
 		9A4030671BB96A0100075BAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A4030661BB96A0100075BAF /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A32140D1BBD69BB00B7FEC4 /* ModalViewController+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModalViewController+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
 		9A40305C1BB96A0100075BAF /* RPModalGestureTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPModalGestureTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A40305F1BB96A0100075BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A4030641BB96A0100075BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				9A40308D1BB96A7600075BAF /* BackgroundPresentationController.swift */,
 				9A4030911BB96BE400075BAF /* ModalViewController.swift */,
+				9A32140D1BBD69BB00B7FEC4 /* ModalViewController+UIViewControllerTransitioningDelegate.swift */,
 				9A4030921BB96BE400075BAF /* ModalViewController.xib */,
 			);
 			name = Modal;
@@ -315,6 +318,7 @@
 				9A40308E1BB96A7600075BAF /* BackgroundPresentationController.swift in Sources */,
 				9A4030991BB96E4600075BAF /* TransitionAnimator.swift in Sources */,
 				9A4030601BB96A0100075BAF /* AppDelegate.swift in Sources */,
+				9A32140E1BBD69BB00B7FEC4 /* ModalViewController+UIViewControllerTransitioningDelegate.swift in Sources */,
 				9A4030971BB96C6D00075BAF /* TopViewController.swift in Sources */,
 				9AACA02F1BBAAE84006224BB /* InteractiveTransition.swift in Sources */,
 			);
