@@ -25,7 +25,7 @@ class InteractiveTransition: UIPercentDrivenInteractiveTransition {
     
     func dismissalPanGesture(recognizer: UIPanGestureRecognizer) {
         
-        var progress = abs(recognizer.translationInView(attachedViewController.view).y) / attachedViewController.view.bounds.size.height
+        var progress = -recognizer.translationInView(attachedViewController.view).y / attachedViewController.view.bounds.size.height
         progress = min(1.0, max(0.0, progress))
         print(progress)
         
@@ -42,7 +42,7 @@ class InteractiveTransition: UIPercentDrivenInteractiveTransition {
             
         case .Cancelled, .Ended:
             
-            progress > 0.3 ? finishInteractiveTransition() : cancelInteractiveTransition()
+            progress > 0.1 ? finishInteractiveTransition() : cancelInteractiveTransition()
             
         default:
             print("gestureRecognizer state not handled")
