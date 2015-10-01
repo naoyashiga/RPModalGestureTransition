@@ -8,9 +8,7 @@
 
 import UIKit
 
-class TopViewController: UIViewController, ModalViewControllerDelegate {
-    var interactiveTransition: InteractiveTransition?
-
+class TopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,47 +19,6 @@ class TopViewController: UIViewController, ModalViewControllerDelegate {
     
     @IBAction func openModalButtonTapped(sender: UIButton) {
         let modalVC = ModalViewController(nibName: "ModalViewController", bundle: nil)
-        modalVC.modalPresentationStyle = .Custom
-        modalVC.transitioningDelegate = self
-//        modalVC.delegate = self
-        
         presentViewController(modalVC, animated: true, completion: nil)
     }
-    
-    func applyInteractiveTransition(animator: InteractiveTransition) {
-        interactiveTransition = animator
-    }
-
-}
-
-extension TopViewController: UIViewControllerTransitioningDelegate {
-    
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        
-        return BackgroundPresentationController(presentedViewController: presented, presentingViewController: self)
-    }
-    
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        return TransitionAnimator(isPresenting: true)
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        return TransitionAnimator(isPresenting: false)
-    }
-    
-    func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return nil
-    }
-    
-    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        
-        if let animator = interactiveTransition {
-            return animator
-        }
-        
-        return nil
-    }
-    
 }

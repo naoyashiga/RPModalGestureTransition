@@ -8,45 +8,41 @@
 
 import UIKit
 
-protocol InteractiveTransitionDelegate {
-    func setup() -> InteractiveTransition
-}
-
 class InteractiveTransition: UIPercentDrivenInteractiveTransition {
     
-    var delegate: InteractiveTransitionDelegate?
-    private var parentViewController = UIViewController()
-    private let percentageAdjustFactor: CGFloat = 2.5
+    var isInteractiveDissmalTransition = false
+    private var attachedViewController = UIViewController()
     
-    func attachToViewController(viewController: UIViewController) {
+    init(attachedViewController: UIViewController) {
+        super.init()
         
-        parentViewController = viewController
+        self.attachedViewController = attachedViewController
         
-        let panRecognizer = UIPanGestureRecognizer(target: self, action: "handlePanRecognizer:")
-        
-        parentViewController.view.addGestureRecognizer(panRecognizer)
+        let presentationPanGesture = UIPanGestureRecognizer()
+        presentationPanGesture.addTarget(self, action: "dismissalPanGesture:")
+        attachedViewController.view.addGestureRecognizer(presentationPanGesture)
     }
     
-    func handlePanRecognizer(recognizer: UIPanGestureRecognizer) {
+    func dismissalPanGesture(recognizer: UIPanGestureRecognizer) {
         
-        print(recognizer.translationInView(parentViewController.view).y)
-        var progress = recognizer.translationInView(parentViewController.view).y / parentViewController.view.bounds.size.height / percentageAdjustFactor
+        var progress = abs(recognizer.translationInView(attachedViewController.view).y) / attachedViewController.view.bounds.size.height
         progress = min(1.0, max(0.0, progress))
+        print(progress)
         
+        isInteractiveDissmalTransition = recognizer.state == .Began || recognizer.state == .Changed
         
         switch recognizer.state {
         case .Began:
-            parentViewController.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            attachedViewController.dismissViewControllerAnimated(true, completion: nil)
             
         case .Changed:
             updateInteractiveTransition(progress)
             
-        default:
+        case .Cancelled, .Ended:
             
-            if recognizer.velocityInView(parentViewController.view).y >= 0 {
+            if progress > 0.3 {
                 
                 finishInteractiveTransition()
-                parentViewController.view.removeGestureRecognizer(recognizer)
                 
             } else {
                 
@@ -54,8 +50,9 @@ class InteractiveTransition: UIPercentDrivenInteractiveTransition {
                 
             }
             
-            break;
+        default:
+            print("gestureRecognizer state not handled")
         }
     }
-    
+
 }
