@@ -33,22 +33,16 @@ class InteractiveTransition: UIPercentDrivenInteractiveTransition {
         
         switch recognizer.state {
         case .Began:
+            
             attachedViewController.dismissViewControllerAnimated(true, completion: nil)
             
         case .Changed:
+            
             updateInteractiveTransition(progress)
             
         case .Cancelled, .Ended:
             
-            if progress > 0.3 {
-                
-                finishInteractiveTransition()
-                
-            } else {
-                
-                cancelInteractiveTransition()
-                
-            }
+            progress > 0.3 ? finishInteractiveTransition() : cancelInteractiveTransition()
             
         default:
             print("gestureRecognizer state not handled")
