@@ -2,11 +2,11 @@
 ![](https://raw.githubusercontent.com/naoyashiga/RPModalGestureTransition/master/demo.gif)  
 You can dismiss modal by using gesture.
 
-# How to use
-## Define animation
+# Usage
+## 1.Define animation
 You define animator class inherits UIViewControllerAnimatedTransitioning. I made this in [TransitionAnimator.swift](https://github.com/naoyashiga/RPModalGestureTransition/blob/master/RPModalGestureTransition/TransitionAnimator.swift).
 
-## Set UIViewControllerTransitioningDelegate to modal
+## 2.Set UIViewControllerTransitioningDelegate to modal
 ```swift
 import UIKit
 
@@ -41,7 +41,7 @@ extension ModalViewController: UIViewControllerTransitioningDelegate {
 }
 ```
 
-## Set InteractiveTransition to modal
+## 3.Set InteractiveTransition to modal
 Class InteractiveTransition inherits UIPercentDrivenInteractiveTransition.
 ```swift
 class ModalViewController: UIViewController {
@@ -58,5 +58,5 @@ class ModalViewController: UIViewController {
     }
 ```
 
-## Define interactive animation
+## 4.Define interactive animation
 You have to define how animation change with gesture. You check [InteractiveTransition.swift](https://github.com/naoyashiga/RPModalGestureTransition/blob/master/RPModalGestureTransition/InteractiveTransition.swift).
