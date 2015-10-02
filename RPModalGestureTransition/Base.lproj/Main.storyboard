@@ -17,9 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em1-Ou-ckU">
-                                <rect key="frame" x="252" y="270" width="97" height="60"/>
+                                <rect key="frame" x="202" y="226" width="197" height="148"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.61568627450000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <inset key="contentEdgeInsets" minX="50" minY="50" maxX="50" maxY="50"/>
                                 <state key="normal" title="Open">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

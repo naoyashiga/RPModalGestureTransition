@@ -15,9 +15,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRJ-2d-4Hg">
-                    <rect key="frame" x="274" y="285" width="52" height="30"/>
+                    <rect key="frame" x="200" y="232" width="201" height="136"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <inset key="contentEdgeInsets" minX="50" minY="50" maxX="50" maxY="50"/>
                     <state key="normal" title="dismiss">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="0.40784313729999999" green="0.61568627450000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="dismissButtonTapped:" destination="-1" eventType="touchUpInside" id="EHh-Fs-MmC"/>

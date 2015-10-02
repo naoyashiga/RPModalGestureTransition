@@ -11,7 +11,7 @@ import UIKit
 
 class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
-    private let animationDuration: NSTimeInterval = 0.3
+    private let animationDuration: NSTimeInterval = 1.0
     
     private(set) weak var transitionContext: UIViewControllerContextTransitioning?
     
@@ -67,8 +67,8 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         UIView.animateWithDuration(
             self.animationDuration,
             delay: 0.0,
-            usingSpringWithDamping: 1.0,
-            initialSpringVelocity: 0.5,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 0,
             options: .CurveEaseInOut,
             animations: {
                 
@@ -85,7 +85,7 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             self.animationDuration,
             delay: 0.0,
             usingSpringWithDamping: 1.0,
-            initialSpringVelocity: 0.5,
+            initialSpringVelocity: 0,
             options: .CurveEaseInOut,
             animations: {
             
