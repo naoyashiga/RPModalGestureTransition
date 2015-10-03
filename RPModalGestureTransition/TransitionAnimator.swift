@@ -8,10 +8,7 @@
 
 import UIKit
 
-
 class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-    
-    private let animationDuration: NSTimeInterval = 1.0
     
     private(set) weak var transitionContext: UIViewControllerContextTransitioning?
     
@@ -28,6 +25,7 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     private let isPresenting :Bool
+    private let animationDuration: NSTimeInterval = 1.0
     
     // MARK: - Life cycle
     
@@ -65,7 +63,7 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(toView)
         
         UIView.animateWithDuration(
-            self.animationDuration,
+            transitionDuration(transitionContext),
             delay: 0.0,
             usingSpringWithDamping: 0.5,
             initialSpringVelocity: 0,
@@ -82,7 +80,7 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         guard let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey) else { return }
         
         UIView.animateWithDuration(
-            self.animationDuration,
+            transitionDuration(transitionContext),
             delay: 0.0,
             usingSpringWithDamping: 1.0,
             initialSpringVelocity: 0,

@@ -11,7 +11,9 @@ import UIKit
 class InteractiveTransition: UIPercentDrivenInteractiveTransition {
     
     var isInteractiveDissmalTransition = false
+    
     private var attachedViewController = UIViewController()
+    private let percentCompleteThreshold: CGFloat = 0.1 // 0 ~ 1
     
     init(attachedViewController: UIViewController) {
         super.init()
@@ -27,6 +29,7 @@ class InteractiveTransition: UIPercentDrivenInteractiveTransition {
         
         var progress = -recognizer.translationInView(attachedViewController.view).y / attachedViewController.view.bounds.size.height
         progress = min(1.0, max(0.0, progress))
+        
         print(progress)
         
         isInteractiveDissmalTransition = recognizer.state == .Began || recognizer.state == .Changed
@@ -42,11 +45,19 @@ class InteractiveTransition: UIPercentDrivenInteractiveTransition {
             
         case .Cancelled, .Ended:
             
-            progress > 0.1 ? finishInteractiveTransition() : cancelInteractiveTransition()
+            percentComplete > percentCompleteThreshold ? finishInteractiveTransition() : cancelInteractiveTransition()
             
-        default:
-            print("gestureRecognizer state not handled")
+        default: ()
         }
     }
-
+    
+    override func cancelInteractiveTransition() {
+        completionSpeed = percentCompleteThreshold
+        super.cancelInteractiveTransition()
+    }
+    
+    override func finishInteractiveTransition() {
+        completionSpeed = 1.0 - percentCompleteThreshold
+        super.finishInteractiveTransition()
+    }
 }
