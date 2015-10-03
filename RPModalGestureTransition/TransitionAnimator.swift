@@ -24,10 +24,16 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         return transitionContext?.viewControllerForKey(UITransitionContextFromViewControllerKey)
     }
     
+    private var toView: UIView? {
+        return transitionContext?.viewForKey(UITransitionContextToViewKey)
+    }
+    
+    private var fromView: UIView? {
+        return transitionContext?.viewForKey(UITransitionContextFromViewKey)
+    }
+    
     private let isPresenting :Bool
     private let animationDuration: NSTimeInterval = 1.0
-    
-    // MARK: - Life cycle
     
     init(isPresenting: Bool) {
         self.isPresenting = isPresenting
@@ -43,24 +49,28 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         self.transitionContext = transitionContext
         
         if isPresenting {
-            animatePresentationWithTransitionContext(transitionContext)
+            
+            prepareViews()
+            
+            animatePresentationWithTransitionContext()
+            
         } else {
-            animateDismissalWithTransitionContext(transitionContext)
+            animateDismissalWithTransitionContext()
         }
     }
     
-    private func animatePresentationWithTransitionContext(transitionContext: UIViewControllerContextTransitioning) {
-        
-        guard let toViewController = toViewController, containerView = containerView else {
+    private func prepareViews() {
+        guard let transitionContext = transitionContext, toViewController = toViewController, containerView = containerView, toView = toView else {
             return
         }
         
-        guard let toView = transitionContext.viewForKey(UITransitionContextToViewKey) else { return }
-        
         toView.frame = transitionContext.finalFrameForViewController(toViewController)
-        toView.center.y -= 300
-        
         containerView.addSubview(toView)
+    }
+    
+    private func animatePresentationWithTransitionContext() {
+        
+        layoutBeforePresentation()
         
         UIView.animateWithDuration(
             transitionDuration(transitionContext),
@@ -68,16 +78,14 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             usingSpringWithDamping: 0.5,
             initialSpringVelocity: 0,
             options: .CurveEaseInOut,
-            animations: {
-                
-                toView.center.y += 300
-                
-            }, completion: didFinishedAnimation)
+            animations: layoutAfterPresentation,
+            completion: didFinishedAnimation
+        )
     }
     
-    private func animateDismissalWithTransitionContext(transitionContext: UIViewControllerContextTransitioning) {
+    private func animateDismissalWithTransitionContext() {
         
-        guard let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey) else { return }
+        layoutBeforeDismissal()
         
         UIView.animateWithDuration(
             transitionDuration(transitionContext),
@@ -85,11 +93,9 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             usingSpringWithDamping: 1.0,
             initialSpringVelocity: 0,
             options: .CurveEaseInOut,
-            animations: {
-            
-            fromView.frame.origin.y = -fromView.bounds.height
-            
-            }, completion: didFinishedAnimation)
+            animations: layoutAfterDismissal,
+            completion: didFinishedAnimation
+        )
     }
     
     private func didFinishedAnimation(_:Bool) {
@@ -103,4 +109,33 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             transitionContext.completeTransition(true)
         }
     }
+    
+    private func layoutBeforePresentation() {
+        guard let toView = toView else {
+            return
+        }
+        
+        toView.center.y -= 300
+    }
+    
+    private func layoutAfterPresentation() {
+        guard let toView = toView else {
+            return
+        }
+        
+        toView.center.y += 300
+    }
+    
+    private func layoutBeforeDismissal() {
+        // layoutBeforeDismissal
+    }
+    
+    private func layoutAfterDismissal() {
+        guard let fromView = fromView else {
+            return
+        }
+        
+        fromView.frame.origin.y = -fromView.bounds.height
+    }
+    
 }

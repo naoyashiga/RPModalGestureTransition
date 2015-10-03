@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RPModalGestureTransition/TransitionAnimator.swift"
-            timestampString = "465529074.127867"
+            timestampString = "465532611.136126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "animateDismissalWithTransitionContext(_:)"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "animateDismissalWithTransitionContext()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
