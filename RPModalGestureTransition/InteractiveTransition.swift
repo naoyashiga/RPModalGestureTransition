@@ -8,11 +8,6 @@
 
 import UIKit
 
-class GesutureDirectionManager {
-    var direction: GestureDirection = .Up
-    static let sharedInstance = GesutureDirectionManager()
-}
-
 class InteractiveTransition: UIPercentDrivenInteractiveTransition {
     
     var isInteractiveDissmalTransition = false

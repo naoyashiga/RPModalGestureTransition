@@ -25,7 +25,6 @@ extension ModalViewController: UIViewControllerTransitioningDelegate {
             return nil
         }
 
-//        return TransitionAnimator(isPresenting: false)
         return TransitionAnimator(isPresenting: false, gestureDirection: percentInteractiveTransition.gestureDirection)
     }
 
