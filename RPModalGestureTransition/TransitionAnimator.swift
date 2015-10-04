@@ -143,12 +143,10 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         switch gestureDirection {
         case .Up:
-            fromView.frame.origin.y = -fromView.bounds.height
+            fromView.center.y = -fromView.bounds.height / 2
             
         case .Down:
-            fromView.frame.origin.y = fromView.bounds.height
+            fromView.center.y = UIScreen.mainScreen().bounds.size.height + fromView.bounds.height / 2
         }
-        
     }
-    
 }

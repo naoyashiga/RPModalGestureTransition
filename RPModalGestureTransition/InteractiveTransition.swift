@@ -8,6 +8,11 @@
 
 import UIKit
 
+class GesutureDirectionManager {
+    var direction: GestureDirection = .Up
+    static let sharedInstance = GesutureDirectionManager()
+}
+
 class InteractiveTransition: UIPercentDrivenInteractiveTransition {
     
     var isInteractiveDissmalTransition = false
@@ -31,17 +36,9 @@ class InteractiveTransition: UIPercentDrivenInteractiveTransition {
         isInteractiveDissmalTransition = recognizer.state == .Began || recognizer.state == .Changed
         
         switch recognizer.state {
-        case .Began:
-            
-            attachedViewController.dismissViewControllerAnimated(true, completion: nil)
-            
-        case .Changed:
-            dismissalPanGestureChanged(recognizer)
-            
-        case .Cancelled, .Ended:
-            
-            percentComplete > percentCompleteThreshold ? finishInteractiveTransition() : cancelInteractiveTransition()
-            
+        case .Began: panGestureBegan(recognizer)
+        case .Changed: panGestureChanged(recognizer)
+        case .Cancelled, .Ended: panGestureCancelledAndEnded(recognizer)
         default: ()
         }
     }
@@ -56,15 +53,29 @@ class InteractiveTransition: UIPercentDrivenInteractiveTransition {
         super.finishInteractiveTransition()
     }
     
-    private func dismissalPanGestureChanged(recognizer: UIPanGestureRecognizer) {
-        var progress = recognizer.translationInView(attachedViewController.view).y / attachedViewController.view.bounds.size.height
-        progress = min(1.0, max(-1.0, progress))
-        
-//        print(progress)
-        
+    private func panGestureBegan(recognizer: UIPanGestureRecognizer) {
         gestureDirection = panGestureDirection(recognizer)
+        attachedViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    private func panGestureChanged(recognizer: UIPanGestureRecognizer) {
+        let transition = recognizer.translationInView(attachedViewController.view)
+        var progress = transition.y / attachedViewController.view.bounds.size.height
         
-        updateInteractiveTransition(abs(progress))
+        switch gestureDirection {
+        case .Up:
+            progress = -min(1.0, max(-1.0, progress))
+        case .Down:
+            progress = min(1.0, max(0, progress))
+        }
+        
+        print(progress)
+        
+        updateInteractiveTransition(progress)
+    }
+    
+    private func panGestureCancelledAndEnded(recognizer: UIPanGestureRecognizer) {
+        percentComplete > percentCompleteThreshold ? finishInteractiveTransition() : cancelInteractiveTransition()
     }
     
     private func panGestureDirection(recognizer: UIPanGestureRecognizer) -> GestureDirection {
@@ -72,8 +83,4 @@ class InteractiveTransition: UIPercentDrivenInteractiveTransition {
         
         return velocity.y <= 0 ? .Up : .Down
     }
-    
-//    private func gestureDirectionDidChange(recognizer: UIPanGestureRecognizer) -> Bool {
-//        
-//    }
 }

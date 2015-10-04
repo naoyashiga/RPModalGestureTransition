@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct ModalSizeRatio {
+    static let width: CGFloat = 0.85
+    static let height: CGFloat = 0.8
+}
+
 class BackgroundPresentationController: UIPresentationController {
     var dimmingView: UIView!
     
@@ -49,8 +54,8 @@ class BackgroundPresentationController: UIPresentationController {
         
         var presentedViewFrame = CGRectZero
         
-        let width:CGFloat = containerView.bounds.size.width * 0.85
-        let height:CGFloat = containerView.bounds.size.height  * 0.8
+        let width:CGFloat = containerView.bounds.size.width * ModalSizeRatio.width
+        let height:CGFloat = containerView.bounds.size.height  * ModalSizeRatio.height
         
         presentedViewFrame.size = CGSizeMake(width,height)
         presentedViewFrame.origin = CGPointMake(containerView.bounds.size.width / 2.0, containerView.bounds.size.height / 2.0)
