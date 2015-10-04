@@ -21,8 +21,12 @@ extension ModalViewController: UIViewControllerTransitioningDelegate {
     }
 
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let percentInteractiveTransition = percentInteractiveTransition else {
+            return nil
+        }
 
-        return TransitionAnimator(isPresenting: false)
+//        return TransitionAnimator(isPresenting: false)
+        return TransitionAnimator(isPresenting: false, gestureDirection: percentInteractiveTransition.gestureDirection)
     }
 
     func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {

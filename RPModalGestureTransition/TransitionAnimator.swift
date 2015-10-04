@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum GestureDirection {
+    case Up, Down
+}
+
 class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     private(set) weak var transitionContext: UIViewControllerContextTransitioning?
@@ -33,10 +37,12 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     private let isPresenting :Bool
+    private let gestureDirection :GestureDirection
     private let animationDuration: NSTimeInterval = 1.0
     
-    init(isPresenting: Bool) {
+    init(isPresenting: Bool, gestureDirection :GestureDirection = .Up) {
         self.isPresenting = isPresenting
+        self.gestureDirection = gestureDirection
         
         super.init()
     }
@@ -135,7 +141,14 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             return
         }
         
-        fromView.frame.origin.y = -fromView.bounds.height
+        switch gestureDirection {
+        case .Up:
+            fromView.frame.origin.y = -fromView.bounds.height
+            
+        case .Down:
+            fromView.frame.origin.y = fromView.bounds.height
+        }
+        
     }
     
 }

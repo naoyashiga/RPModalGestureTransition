@@ -11,6 +11,7 @@ import UIKit
 class InteractiveTransition: UIPercentDrivenInteractiveTransition {
     
     var isInteractiveDissmalTransition = false
+    var gestureDirection: GestureDirection = .Up
     
     private var attachedViewController = UIViewController()
     private let percentCompleteThreshold: CGFloat = 0.1 // 0 ~ 1
@@ -27,11 +28,6 @@ class InteractiveTransition: UIPercentDrivenInteractiveTransition {
     
     func dismissalPanGesture(recognizer: UIPanGestureRecognizer) {
         
-        var progress = -recognizer.translationInView(attachedViewController.view).y / attachedViewController.view.bounds.size.height
-        progress = min(1.0, max(0.0, progress))
-        
-        print(progress)
-        
         isInteractiveDissmalTransition = recognizer.state == .Began || recognizer.state == .Changed
         
         switch recognizer.state {
@@ -40,8 +36,7 @@ class InteractiveTransition: UIPercentDrivenInteractiveTransition {
             attachedViewController.dismissViewControllerAnimated(true, completion: nil)
             
         case .Changed:
-            
-            updateInteractiveTransition(progress)
+            dismissalPanGestureChanged(recognizer)
             
         case .Cancelled, .Ended:
             
@@ -60,4 +55,25 @@ class InteractiveTransition: UIPercentDrivenInteractiveTransition {
         completionSpeed = 1.0 - percentCompleteThreshold
         super.finishInteractiveTransition()
     }
+    
+    private func dismissalPanGestureChanged(recognizer: UIPanGestureRecognizer) {
+        var progress = recognizer.translationInView(attachedViewController.view).y / attachedViewController.view.bounds.size.height
+        progress = min(1.0, max(-1.0, progress))
+        
+//        print(progress)
+        
+        gestureDirection = panGestureDirection(recognizer)
+        
+        updateInteractiveTransition(abs(progress))
+    }
+    
+    private func panGestureDirection(recognizer: UIPanGestureRecognizer) -> GestureDirection {
+        let velocity = recognizer.velocityInView(attachedViewController.view)
+        
+        return velocity.y <= 0 ? .Up : .Down
+    }
+    
+//    private func gestureDirectionDidChange(recognizer: UIPanGestureRecognizer) -> Bool {
+//        
+//    }
 }
