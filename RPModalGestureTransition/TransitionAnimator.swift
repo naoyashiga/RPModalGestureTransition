@@ -121,7 +121,7 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             return
         }
         
-        toView.center.y -= 300
+        toView.center.y -= toView.frame.size.height
     }
     
     private func layoutAfterPresentation() {
@@ -129,7 +129,7 @@ class TransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             return
         }
         
-        toView.center.y += 300
+        toView.center.y += UIScreen.mainScreen().bounds.size.height / 2
     }
     
     private func layoutBeforeDismissal() {
